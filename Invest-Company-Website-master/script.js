@@ -4,7 +4,7 @@ gsap.from('.logo div',{
     opacity:0,
     delay:1,
     x:20
-} )
+})
 
 const menu_items = document.querySelector('.menu-items')
 gsap.from(menu_items.children ,{
@@ -109,23 +109,21 @@ gsap.utils.toArray('.line').forEach(line=>{
     })
 })
 
-
-gsap.utils.toArray('.rotation').forEach(rotate=>{
-    gsap.fromTo(rotate,{
-        opacity:0,
-        rotation:350,
-        scale:.2
-    },{
-        opacity:1,
-        rotation:0,
-        scale:1,
-        duration:1,
-        delay:1,
-        scrollTrigger:rotate
-
-    })
+gsap.fromTo('.rotation' ,{
+    opacity:0,
+    rotation:350,
+    scale:.2
+},{
+    opacity:1,
+    rotation:0,
+    scale:1,
+    duration:1,
+    delay:2,
+    stagger:{
+        amount:2
+    },
+    scrollTrigger:'.rotation'
 })
-
 
 gsap.fromTo('.card' ,{
     opacity:0,
@@ -142,7 +140,6 @@ gsap.fromTo('.card' ,{
 })
 
 const menu = document.querySelector('.menu')
-
 
 gsap.from(menu.children,{
     opacity:0,
